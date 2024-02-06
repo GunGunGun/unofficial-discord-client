@@ -33,3 +33,9 @@ jobs:
           cd build
           cmake ..
           cmake --build . --parallel $(nproc)
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows_artifacts
+          path: |
+            ${{github.workspace}}/
